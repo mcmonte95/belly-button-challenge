@@ -13,7 +13,7 @@ This JavaScript code creates an interactive dashboard for visualizing and explor
 
 Additionally, an interactive dropdown menu is implemented to allow users to select different OTU IDs and dynamically update the charts and demographic information panel based on the selection.
 
-This dashboard was then deployed in Git Pages. Check out the live dashboard here: [Belly Button Biodiversity Dashboard](https://mcmonte95.github.io/belly-button-challenge/)
+This dashboard is currently deployed in `Git Pages`. Check out the live dashboard here: [Belly Button Biodiversity Dashboard](https://mcmonte95.github.io/belly-button-challenge/)
 
 ## Repository Guide
 
