@@ -15,6 +15,22 @@ Additionally, an interactive dropdown menu is implemented to allow users to sele
 
 Check out the live dashboard here: [Belly Button Biodiversity Dashboard](https://mcmonte95.github.io/belly-button-challenge/)
 
+## Repository Guide
+
+This repository is structured to facilitate the development and deployment of the Belly Button Biodiversity Dashboard. Below is a guide to the primary components of the repository:
+
+### Directory and File Structure
+
+- `static/js`:
+  - `app.js`: This is the main JavaScript file that contains all the logic for pulling data from the API and creating as well as updating the plots on the dashboard. It utilizes D3.js for data manipulation and Plotly.js for rendering the charts.
+
+- `index.html`: Located in the root directory, this file is the HTML frontend of the dashboard. It includes:
+  - Imports for D3.js and Plotly.js libraries.
+  - A script tag for the `app.js` file.
+  - **Disclaimer**: The `index.html` file was provided beforehand and has not been edited as part of this project. It serves as the interface where the dashboard is rendered.
+
+- `samples.json`: Also in the root directory, this file contains sample data from the Belly Button Biodiversity API. It is used as a reference for the structure and format of the data that the `app.js` script processes and visualizes.
+
 ## Detailed Steps
 
 ### 1. Setting Up the Dropdown Menu
