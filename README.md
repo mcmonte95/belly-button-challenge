@@ -15,8 +15,6 @@ Additionally, an interactive dropdown menu is implemented to allow users to sele
 
 Check out the live dashboard here: [Belly Button Biodiversity Dashboard](https://mcmonte95.github.io/belly-button-challenge/)
 
-![Frontpage of Belly Button Biodiversity Dashboard](URL-of-your-frontpage-image)
-
 ## Detailed Steps
 
 ### 1. Setting Up the Dropdown Menu
