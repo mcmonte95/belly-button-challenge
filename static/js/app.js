@@ -1,6 +1,8 @@
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json"
 
-
+// d3.json(url).then(function(data) {
+//     console.log(data);
+// });
 
 /**************************************
  * SECTION: Helper Functions
@@ -11,7 +13,27 @@ const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/
 function plotExists(plotId) {
     let plotElement = d3.select('#' + plotId);
     return !plotElement.empty() && plotElement.select('svg').empty() === false;
-}
+};
+
+/**************************************
+ * SECTION: Set Dropdown Options
+ **************************************/
+
+
+
+// Set up dropdown and setup a return so i can wait for this to load and use it to initialize my charts for the first refresh.
+function dropdownSelections(){
+    return d3.json(url).then(function(data) {
+
+        let dropdown = d3.select("#selDataset")
+        
+        data.names.forEach(function(name) {
+            dropdown.append("option")
+                .text(name)
+                .attr("value", name);
+        });
+    });
+};
 
 
 
@@ -71,18 +93,34 @@ function createBar(id){
             Plotly.newPlot("bar", [barChart], layoutBar);
         } else {
             // Plot exists, update it
-            Plotly.restyle("bar", [barChart]);
+            let updateData = {
+                x: [bar_vals],
+                y: [bar_labels],
+                text: [bar_hoverText]
+            };
+            Plotly.restyle("bar", updateData);
         }
 
     });
 };
 
 /**************************************
+ * SECTION: Change Data per Dropdown Value
+ **************************************/
+
+function optionChanged(item){
+    createBar(item);
+  }
+
+
+/**************************************
  * SECTION: Initialize
  **************************************/
 
-function init(){
-    createBar(940);
-};
+function init() {
+    dropdownSelections().then(() => {
+        createBar(d3.select("#selDataset").property("value"));
+    });
+}
 
 init();
